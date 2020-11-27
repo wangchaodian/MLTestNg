@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [喔喔团测试]">
+  <listeners>
+    <listener class-name="com.qa.reporter.ExtentTestNGIReporterListener"/>
+  </listeners>
+  <test name="Testng_learn">
+    <groups>
+      <dependencies>
+        <group depends-on="user_post" name="user_get"/>
+      </dependencies>
+    </groups>
+    <classes>
+      <class name="com.qa.test.WowoTest"/>
+    </classes>
+  </test> <!-- Testng_learn -->
+</suite> <!-- Failed suite [喔喔团测试] -->

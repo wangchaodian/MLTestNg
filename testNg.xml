@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- 执行测试用例，输出测试报告 -->
+<suite name="喔喔团测试">
+
+	<test name = "Testng_learn">
+
+		<groups>
+			<dependencies>
+				<group name = "user_get" depends-on = "user_post"/>
+			</dependencies>
+		
+		</groups>
+	
+		<classes>
+			<class name = "com.qa.test.WowoTest"/> 
+		</classes>
+		
+	</test>
+	 <!--监听器  测试报告-->
+    <listeners>
+        <listener class-name="com.qa.reporter.ExtentTestNGIReporterListener"></listener>
+    </listeners>
+</suite>

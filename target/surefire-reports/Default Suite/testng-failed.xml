@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Default Suite]">
+  <test name="Testng_learn">
+    <groups>
+      <dependencies>
+        <group depends-on="user_post" name="user_get"/>
+      </dependencies>
+    </groups>
+    <classes>
+      <class name="com.qa.test.TjTest"/>
+    </classes>
+  </test> <!-- Testng_learn -->
+  <test name="Testng_learn(failed)">
+    <classes>
+      <class name="com.qa.test.TjTest">
+        <methods>
+          <include name="loginTest"/>
+          <include name="getUserTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.qa.test.TjTest -->
+    </classes>
+  </test> <!-- Testng_learn(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->
