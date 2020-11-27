@@ -26,8 +26,8 @@ public class WowoTest extends TestBase {
 //		host = prop.getProperty("WowoHost");   // 测试环境
 		host = prop.getProperty("WowoHost1");   // 线上环境
 		
-		excelUrl = prop.getProperty("ExcelWowoUrl");    //项目内调用Excel地址
-//		excelUrl = prop.getProperty("ExcelWowoUrl1");  //Jenkins调用Excel地址
+//		excelUrl = prop.getProperty("ExcelWowoUrl");    //项目内调用Excel地址
+		excelUrl = prop.getProperty("ExcelWowoUrl1");  //Jenkins调用Excel地址
 		
 		Sheet_Post = prop.getProperty("Sheet_Post");
 		Sheet_Get = prop.getProperty("Sheet_Get");
