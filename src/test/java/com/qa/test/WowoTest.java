@@ -1,10 +1,12 @@
 package com.qa.test;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.qa.base.TestBase;
+import com.qa.restclient.ExcelUtils;
 import com.qa.restclient.KeyMethod;
 import com.qa.restclient.RestClient;
 
@@ -48,6 +50,12 @@ public class WowoTest extends TestBase {
 
 		KeyMethod.excel(excelUrl, Sheet_Get, host);
 //		Reporter.log("状态码***********：" + KeyMethod.statusCode, true);
+	}
+	
+	@AfterClass
+	public void loginOut(){
+		System.out.println("----------------");
+		System.out.println("接口测试完成!!!");
 	}
 
 }

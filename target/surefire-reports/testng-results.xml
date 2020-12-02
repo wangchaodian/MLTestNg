@@ -2,29 +2,33 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="喔喔团测试" duration-ms="9569" started-at="2020-11-27T07:59:54Z" finished-at="2020-11-27T08:00:04Z">
+  <suite name="喔喔团测试" duration-ms="7583" started-at="2020-12-02T12:33:41Z" finished-at="2020-12-02T12:33:49Z">
     <groups>
       <group name="user_get">
-        <method signature="WowoTest.getUserTest()[pri:0, instance:com.qa.test.WowoTest@3fb6a447]" name="getUserTest" class="com.qa.test.WowoTest"/>
+        <method signature="WowoTest.getUserTest()[pri:0, instance:com.qa.test.WowoTest@79b4d0f]" name="getUserTest" class="com.qa.test.WowoTest"/>
       </group> <!-- user_get -->
       <group name="user_post">
-        <method signature="WowoTest.loginTest()[pri:0, instance:com.qa.test.WowoTest@3fb6a447]" name="loginTest" class="com.qa.test.WowoTest"/>
+        <method signature="WowoTest.loginTest()[pri:0, instance:com.qa.test.WowoTest@79b4d0f]" name="loginTest" class="com.qa.test.WowoTest"/>
       </group> <!-- user_post -->
     </groups>
-    <test name="Testng_learn" duration-ms="9569" started-at="2020-11-27T07:59:54Z" finished-at="2020-11-27T08:00:04Z">
+    <test name="Testng_learn" duration-ms="7583" started-at="2020-12-02T12:33:41Z" finished-at="2020-12-02T12:33:49Z">
       <class name="com.qa.test.WowoTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.test.WowoTest@3fb6a447]" name="setUp" is-config="true" duration-ms="9" started-at="2020-11-27T15:59:54Z" finished-at="2020-11-27T15:59:54Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.test.WowoTest@79b4d0f]" name="setUp" is-config="true" duration-ms="8" started-at="2020-12-02T20:33:41Z" finished-at="2020-12-02T20:33:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.qa.test.WowoTest@3fb6a447]" name="loginTest" duration-ms="4604" started-at="2020-11-27T15:59:54Z" finished-at="2020-11-27T15:59:59Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.qa.test.WowoTest@79b4d0f]" name="loginTest" duration-ms="3429" started-at="2020-12-02T20:33:41Z" finished-at="2020-12-02T20:33:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="getUserTest()[pri:0, instance:com.qa.test.WowoTest@3fb6a447]" name="getUserTest" duration-ms="4947" depends-on-groups="user_post, user_post" started-at="2020-11-27T15:59:59Z" finished-at="2020-11-27T16:00:04Z">
+        <test-method status="PASS" signature="getUserTest()[pri:0, instance:com.qa.test.WowoTest@79b4d0f]" name="getUserTest" duration-ms="4135" depends-on-groups="user_post, user_post" started-at="2020-12-02T20:33:45Z" finished-at="2020-12-02T20:33:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUserTest -->
+        <test-method status="PASS" signature="loginOut()[pri:0, instance:com.qa.test.WowoTest@79b4d0f]" name="loginOut" is-config="true" duration-ms="1" started-at="2020-12-02T20:33:49Z" finished-at="2020-12-02T20:33:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginOut -->
       </class> <!-- com.qa.test.WowoTest -->
     </test> <!-- Testng_learn -->
   </suite> <!-- 喔喔团测试 -->
