@@ -100,14 +100,15 @@ public class ExcelUtils {
 			String SheetName) throws IOException {
 
 		try {
-
 			ExcelWSheet = ExcelWBook.getSheet(SheetName);
 			Row = ExcelWSheet.getRow(RowNum);
 			Cell = Row.getCell(ColNum);
 			if (Cell == null) {
 				Cell = Row.createCell(ColNum);
+				Cell.setCellType(Cell.CELL_TYPE_BLANK);
 				Cell.setCellValue(Result);
 			} else {
+				Cell.setCellType(Cell.CELL_TYPE_BLANK);
 				Cell.setCellValue(Result);
 			}
 			// Constant variables Test Data path and Test Data file name
@@ -128,5 +129,4 @@ public class ExcelUtils {
 			}
 		}
 	}
-
 }

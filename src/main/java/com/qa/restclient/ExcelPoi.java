@@ -1,30 +1,64 @@
 package com.qa.restclient;
 
-import java.io.Closeable;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.OutputStream;
 
-import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-//import com.lemon.apiAuto.pojo.Api;
-//import com.lemon.apiAuto.pojo.Case;
-//import com.lemon.apiAuto.pojo.WriteBackData;
-
-//import cn.afterturn.easypoi.excel.ExcelImportUtil;
-//import cn.afterturn.easypoi.excel.entity.ImportParams;
 public class ExcelPoi {
+
+	private static XSSFSheet ExcelWSheet;
+	private static XSSFWorkbook ExcelWBook;
+	private static XSSFCell Cell;
+	private static XSSFRow Row;
+	private static String Path;
+
+	public static OutputStream fileOut = null;
+	public static FileInputStream ExcelFile = null;
 	
+	public static void main(String [] args) throws IOException{
+		writeLetter("D:\\JenkinsNode\\apidata\\dataEngine.xlsx", 2, 7, "hahahha");
+	}
+	
+	
+	public static void writeLetter(String path,int RowNum, int ColNum,String result) throws IOException{
+		ExcelPoi.Path = path;
+		ExcelFile = new FileInputStream(Path);
+		ExcelWBook = new XSSFWorkbook(ExcelFile);
+
+		try {
+			ExcelWSheet = ExcelWBook.getSheet("post");
+			Row = ExcelWSheet.getRow(RowNum);
+			Cell = Row.getCell(ColNum);
+			if (Cell == null) {
+				Cell = Row.createCell(ColNum);
+				Cell.setCellType(Cell.CELL_TYPE_BLANK);
+				Cell.setCellValue(result);
+			} else {
+				Cell.setCellType(Cell.CELL_TYPE_BLANK);
+				Cell.setCellValue(result);
+			}
+			fileOut = new FileOutputStream(Path);
+			ExcelWBook.write(fileOut);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				ExcelFile.close();
+				if (fileOut != null) {
+					fileOut.flush();
+					fileOut.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 }
